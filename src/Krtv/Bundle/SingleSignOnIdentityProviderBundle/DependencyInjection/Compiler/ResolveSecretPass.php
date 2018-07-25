@@ -16,12 +16,12 @@ class ResolveSecretPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        $parameter = $container->getParameter('krtv_single_sign_on_identity_provider.secret_parameter');
+        $parameter = $container->getParameter('krtv_single_sign_on_identity_provider.secret');
 
         $container->getDefinition('krtv_single_sign_on_identity_provider.security.authentication.encoder')
-            ->replaceArgument(0, $container->getParameter($parameter));
+            ->replaceArgument(0, $parameter);
 
         $container->getDefinition('krtv_single_sign_on_identity_provider.uri_signer')
-            ->replaceArgument(0, $container->getParameter($parameter));
+            ->replaceArgument(0, $parameter);
     }
 }

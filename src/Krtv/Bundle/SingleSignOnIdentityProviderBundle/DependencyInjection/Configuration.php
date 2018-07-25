@@ -56,7 +56,7 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('_otp')
                 ->end()
 
-                ->scalarNode('secret_parameter')
+                ->scalarNode('secret')
                     ->defaultValue('secret')
                 ->end()
 
