@@ -15,15 +15,12 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
-
+        "php": ">=7.1.3",
+        "ext-openssl": "*",
         "doctrine/orm": "~2.3",
-
-        "symfony/symfony": "~2.8|~3.0",
-
-        "korotovsky/sso-library": "~0.3.0",
-
-        "ext-openssl": "*"
+        "symfony/framework-bundle": "~4.0",
+        "symfony/dependency-injection": "~4.0",
+        "korotovsky/sso-library": "dev-sf4-0.3.1"
     },
     "require-dev": {
         "phpunit/phpunit": ">=4.4",
