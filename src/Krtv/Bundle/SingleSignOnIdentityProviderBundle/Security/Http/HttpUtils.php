@@ -56,7 +56,7 @@ class HttpUtils
      */
     public function createRedirectResponse(Request $request, $path, $status = 302)
     {
-        return $this->httpUtils->createRedirectResponse($request, $path, $status);
+        return new RedirectResponse($this->httpUtils->generateUri($request, $path), $status);
     }
 
     /**
@@ -67,7 +67,7 @@ class HttpUtils
      */
     public function createSignedRedirectResponse(Request $request, $path, $status = 302)
     {
-        return $this->httpUtils->createRedirectResponse($request, $this->uriSigner->sign($path), $status);
+        return new RedirectResponse($this->httpUtils->generateUri($request, $this->uriSigner->sign($path)), $status);
     }
 
     /**
